@@ -36,8 +36,12 @@ def retreiveDeputeInfos
   page = Nokogiri::HTML(URI.open("#{urls[index]}"))
   fullname = page.xpath('//h1').text.strip
   fullNameAndTitle.push(fullname)
-end
+  re = /^Mme\s*|^M\.\s*/i
+    if fullNameAndTitle.any? { |name| name =~ re}
+    fullNameAndTitle.map! { |name| name.gsub(re, "") }
+    end
 
+  end
 
 fullNameAndTitle
 end
