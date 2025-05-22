@@ -32,11 +32,9 @@ def retrieve_dataXpath(url)
 
   combinedData = Hash[devisesFinal.zip(pricesFinal)]
 
-  puts combinedData
-
 end
 
-retrieve_dataXpath("https://coinmarketcap.com/")
+puts retrieve_dataXpath("https://coinmarketcap.com/")
 
 # puts ENV["TEST_KEY"]
 # puts ENV["TEST_URL"]
