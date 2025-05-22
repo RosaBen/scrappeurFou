@@ -7,7 +7,7 @@ def retrieveURLMairie(url)
 
 urlMairie=[]
   page = Nokogiri::HTML(URI.open(url))
-  listMairieUl = page.xpath('//*[@id="result-search"]//li')
+  listMairieUl = page.xpath('//ul[@id="result-search"]//li')
 
   listMairieUl.each do |mairie|
     mairie= mairie.xpath('.//div[2]//a/@href')
